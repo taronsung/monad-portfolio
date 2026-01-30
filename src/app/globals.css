@@ -1,26 +1,249 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* Monad Design System */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-monad-purple: #836EF9;
+  --color-monad-purple-dark: #6B5ACD;
+  --color-monad-purple-light: #9D8BFF;
+  --color-monad-purple-glow: rgba(131, 110, 249, 0.3);
+  
+  --color-terminal-bg: #0a0a0a;
+  --color-terminal-bg-light: #141414;
+  --color-terminal-text: #e4e4e7;
+  --color-terminal-text-dim: #71717a;
+  --color-terminal-border: rgba(131, 110, 249, 0.2);
+  
+  /* Fonts */
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  
+  /* Spacing */
+  --spacing-terminal: 1.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Font Face - JetBrains Mono */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-terminal-bg);
+  color: var(--color-terminal-text);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-monad-purple);
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-terminal-bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-monad-purple-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-monad-purple);
+}
+
+/* CRT Scan Lines Effect */
+.crt-lines {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: 10;
+}
+
+/* Phosphor Glow Effect */
+.text-glow {
+  text-shadow: 0 0 10px var(--color-monad-purple-glow),
+               0 0 20px var(--color-monad-purple-glow),
+               0 0 30px var(--color-monad-purple-glow);
+}
+
+.text-glow-subtle {
+  text-shadow: 0 0 5px var(--color-monad-purple-glow);
+}
+
+/* Blinking Cursor */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Terminal Container */
+.terminal-container {
+  background: var(--color-terminal-bg);
+  border: 1px solid var(--color-terminal-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 
+    0 0 0 1px rgba(131, 110, 249, 0.1),
+    0 25px 50px -12px rgba(0, 0, 0, 0.8),
+    0 0 60px -15px var(--color-monad-purple-glow);
+}
+
+/* Window Chrome (macOS style) */
+.window-chrome {
+  background: var(--color-terminal-bg-light);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--color-terminal-border);
+}
+
+.traffic-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.traffic-light-red {
+  background: #ff5f57;
+}
+
+.traffic-light-yellow {
+  background: #febc2e;
+}
+
+.traffic-light-green {
+  background: #28c840;
+}
+
+.window-title {
+  flex: 1;
+  text-align: center;
+  color: var(--color-terminal-text-dim);
+  font-size: 0.75rem;
+}
+
+/* Terminal Prompt */
+.prompt {
+  color: var(--color-monad-purple);
+  font-weight: 500;
+}
+
+.prompt-symbol {
+  color: var(--color-monad-purple-light);
+}
+
+/* Links */
+a {
+  color: var(--color-monad-purple-light);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-monad-purple);
+  text-decoration: underline;
+}
+
+/* Skill Pills */
+.skill-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--color-terminal-bg-light);
+  border: 1px solid var(--color-terminal-border);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  color: var(--color-terminal-text);
+  transition: all 0.2s ease;
+}
+
+.skill-pill:hover {
+  border-color: var(--color-monad-purple);
+  background: rgba(131, 110, 249, 0.1);
+}
+
+/* Status Badges */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-final {
+  background: #10b981;
+  color: #022c22;
+}
+
+.badge-draft {
+  background: #f59e0b;
+  color: #451a03;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  :root {
+    --spacing-terminal: 1rem;
+  }
+  
+  body {
+    font-size: 14px;
+  }
 }

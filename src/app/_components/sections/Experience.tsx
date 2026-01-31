@@ -55,6 +55,23 @@ export function Experience() {
                 </motion.li>
               ))}
             </ul>
+
+            {"url" in exp && exp.url && (
+              <a
+                href={exp.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-3 text-sm text-monad-purple hover:text-monad-purple-light transition-colors"
+              >
+                View Research Archive →
+              </a>
+            )}
+
+            {"note" in exp && exp.note && (
+              <p className="mt-2 text-xs text-terminal-text-dim italic">
+                * {exp.note}
+              </p>
+            )}
           </motion.div>
         ))}
       </div>

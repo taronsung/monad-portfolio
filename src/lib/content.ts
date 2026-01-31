@@ -2,7 +2,7 @@ export const profile = {
   name: "Seokrin Taron Sung",
   handle: "@taronsung",
   location: "Seoul, Korea",
-  education: "SNU Law School (on leave), SNU Economics + CS",
+  education: "SNU Law School, SNU Economics + CS",
   email: "taronsung@gmail.com",
   github: "taronsung",
   medium: "@taronsung",
@@ -42,6 +42,18 @@ export const experiences = [
       "Investment thesis development",
       "Policy research and regulatory analysis",
     ],
+  },
+  {
+    company: "Hashed Open Research",
+    role: "Researcher",
+    period: "2024-Present",
+    description: "Blockchain Research Initiative",
+    highlights: [
+      "In-depth protocol research and analysis",
+      "Public research publications",
+    ],
+    url: "https://hashedopenresearch-inc.notion.site/5aac5cee2d11484da9c20e3d2a370b1a?v=1744d20742c2427f925a6019a6d21ab0&pvs=74",
+    note: "Website/research archive migration in progress",
   },
 ] as const;
 

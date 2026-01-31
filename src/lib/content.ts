@@ -2,7 +2,7 @@ export const profile = {
   name: "Seokrin Taron Sung",
   handle: "@taronsung",
   location: "Seoul, Korea",
-  education: "SNU Law School, SNU Economics + CS (Cum Laude)",
+  education: "SNU Law School, SNU Economics + CS",
   email: "taronsung@gmail.com",
   github: "taronsung",
   medium: "@taronsung",
@@ -81,6 +81,13 @@ export const standards = [
 ] as const;
 
 export const publications = [
+  {
+    publisher: "Hashed Open Research",
+    title: "Capital in the AI Era, KRW Stablecoin Strategy (2024-Present)",
+    url: "https://hashedopenresearch-inc.notion.site/5aac5cee2d11484da9c20e3d2a370b1a",
+    language: "Korean",
+    count: "2 reports",
+  },
   {
     publisher: "A41 Ventures",
     title: "Replicated Security #1 & #2 (Aug-Oct 2023)",

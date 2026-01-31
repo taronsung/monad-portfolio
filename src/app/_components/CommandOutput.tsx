@@ -7,6 +7,7 @@ import { Experience } from "./sections/Experience";
 import { Standards } from "./sections/Standards";
 import { Publications } from "./sections/Publications";
 import { Skills } from "./sections/Skills";
+import { OpenSource } from "./sections/OpenSource";
 import { Contact } from "./sections/Contact";
 import { Help } from "./sections/Help";
 import { EasterEgg } from "./EasterEgg";
@@ -40,6 +41,8 @@ function renderOutput(output: CommandName | "unknown" | "easter-egg") {
       return <Skills />;
     case "standards":
       return <Standards />;
+    case "oss":
+      return <OpenSource />;
     case "contact":
       return <Contact />;
     case "easter-egg":

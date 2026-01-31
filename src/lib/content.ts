@@ -2,7 +2,7 @@ export const profile = {
   name: "Seokrin Taron Sung",
   handle: "@taronsung",
   location: "Seoul, Korea",
-  education: "SNU Law School, SNU Economics + CS",
+  education: "SNU Law School, SNU Economics + CS (Cum Laude)",
   email: "taronsung@gmail.com",
   github: "taronsung",
   medium: "@taronsung",
@@ -10,13 +10,27 @@ export const profile = {
 
 export const experiences = [
   {
+    company: "DECIPHER",
+    role: "Research Member",
+    period: "2022-2023",
+    description: "Seoul National University Blockchain Academy",
+    highlights: [
+      "Published Sui L1 deep-dive: architecture, Move language, object-centric model (26 min read)",
+      "Co-authored Scam Series analyzing crypto fraud taxonomies and detection patterns",
+      "Contributed to ZK-STARK application research series",
+      "Weekly technical presentations to 50+ members",
+    ],
+  },
+  {
     company: "ZEP",
     role: "Web3 Team Lead",
     period: "2022-2024",
-    description: "NAVER Z x Supercat JV",
+    description: "NAVER Z x Supercat JV | 30M+ users, peak 4.7M MAU",
     highlights: [
-      "Built non-custodial wallet (EVM + non-EVM: Ethereum, Klaytn, Polygon, NEAR, Aptos)",
-      "Shipped NFT Launchpad to production",
+      "Architected self-custody wallet using Shamir Secret Sharing (3 shares, threshold 2)",
+      "AES-256-CBC encryption with PBKDF2 key derivation, multi-storage split (MongoDB + MariaDB + device)",
+      "Multi-chain support: EVM (Ethereum, Klaytn, Polygon) + NEAR Protocol + Aptos",
+      "Authored ZEP20/721/1155 token standards (EIP equivalents for metaverse)",
       "Led Klaytn + NEAR Foundation grant negotiations",
       "Filed 4 blockchain+metaverse patents",
     ],
@@ -24,12 +38,13 @@ export const experiences = [
   {
     company: "A41 Ventures",
     role: "Protocol Specialist",
-    period: "2024",
+    period: "2023-2024",
     description: "Crypto VC Research",
     highlights: [
+      "Published 'Replicated Security' series on Cosmos ICS (4 articles, bilingual)",
+      "Deep-dive into CCV packet flows, validator set propagation, IBC mechanics",
       "ZKP (Zero-Knowledge Proof) research",
       "Governance mechanism analysis",
-      "Published 'Replicated Security' series on Cosmos ICS",
     ],
   },
   {
@@ -38,10 +53,10 @@ export const experiences = [
     period: "2024-Present",
     description: "Leading Korean Crypto VC Research Initiative",
     highlights: [
-      "Blockchain research and analysis",
-      "Investment thesis development",
+      "Authored 'Capital in the AI Era' research report",
+      "Authored 'KRW Stablecoin Activation Strategy' (200+ pages)",
       "Policy research and regulatory analysis",
-      "Public research publications",
+      "Investment thesis development",
     ],
     url: "https://hashedopenresearch-inc.notion.site/5aac5cee2d11484da9c20e3d2a370b1a?v=1744d20742c2427f925a6019a6d21ab0&pvs=74",
     note: "Website/research archive migration in progress",
@@ -68,15 +83,52 @@ export const standards = [
 export const publications = [
   {
     publisher: "A41 Ventures",
-    title: "Replicated Security Series (Cosmos ICS)",
+    title: "Replicated Security #1 & #2 (Aug-Oct 2023)",
     url: "https://medium.com/@taronsung",
     language: "Bilingual (EN/KR)",
+    count: "4 articles",
   },
   {
-    publisher: "Decipher (SNU Blockchain Society)",
-    title: "ZK-STARK Explainers, Sui Deep-Dive",
+    publisher: "Decipher Media (SNU)",
+    title: "Sui Research, ZK-STARK Series, Scam Analysis (2022-2023)",
     url: "https://medium.com/@taronsung",
     language: "Bilingual (EN/KR)",
+    count: "3 articles",
+  },
+] as const;
+
+export const opensource = [
+  {
+    repo: "semantic-release/semantic-release",
+    stars: "23k",
+    type: "docs" as const,
+    title: "Warn against registry-url conflict in setup-node",
+    description: "Identified documentation gap causing EINVALIDNPMTOKEN errors; added warning section with examples",
+    url: "https://github.com/semantic-release/semantic-release/pull/4024",
+  },
+  {
+    repo: "bash-lsp/bash-language-server",
+    stars: "2.6k",
+    type: "fix" as const,
+    title: "Handle non-file URI schemes in shellcheck linting",
+    description: "Fixed bug affecting WebDAV/kio-fuse users; added safeFileURLToPath helper with tests",
+    url: "https://github.com/bash-lsp/bash-language-server/pull/1371",
+  },
+  {
+    repo: "ollama/ollama",
+    stars: "161k",
+    type: "docs" as const,
+    title: "Capitalize Ollama in serve command help text",
+    description: "Product name consistency in CLI help output",
+    url: "https://github.com/ollama/ollama/pull/13965",
+  },
+  {
+    repo: "langgenius/dify",
+    stars: "60k",
+    type: "fix" as const,
+    title: "Remove unwanted border on sticky elements in dark mode",
+    description: "Frontend styling fix for AI workflow platform",
+    url: "https://github.com/langgenius/dify/pull/31699",
   },
 ] as const;
 
@@ -85,7 +137,7 @@ export const skills = {
   frameworks: ["React", "Next.js", "Node.js", "Hardhat", "Foundry"],
   blockchain: ["Ethereum", "Klaytn/Kaia", "Polygon", "NEAR", "Aptos"],
   specialties: [
-    "Smart Contract Security",
+    "Blockchain Architecture",
     "ZKP Research",
     "Technical Writing",
     "Regulatory Analysis",
@@ -112,6 +164,7 @@ export const commands = {
   work: "View my professional experience",
   skills: "See my technical skills",
   standards: "Blockchain standards I've authored",
+  oss: "Open source contributions",
   contact: "Get in touch with me",
   clear: "Clear the terminal",
 } as const;

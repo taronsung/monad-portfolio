@@ -57,8 +57,8 @@ export function About() {
           className="mt-6 p-4 bg-terminal-bg-light rounded border border-terminal-border"
         >
           <p className="text-sm">
-            <span className="text-monad-purple font-medium">Note:</span> Currently maintaining an active
-            practice in smart contract security research with ongoing vulnerability discovery work.
+            <span className="text-monad-purple font-medium">Availability:</span> Seoul-based, 
+            immediately available for remote work with flexible timezone overlap.
           </p>
         </motion.div>
       </div>

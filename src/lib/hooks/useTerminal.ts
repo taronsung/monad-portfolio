@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 
-export type CommandName = "help" | "about" | "work" | "skills" | "standards" | "contact" | "clear";
+export type CommandName = "help" | "about" | "work" | "skills" | "standards" | "oss" | "contact" | "clear";
 
 interface CommandEntry {
   input: string;
@@ -17,7 +17,7 @@ interface UseTerminalReturn {
   clearHistory: () => void;
 }
 
-const VALID_COMMANDS: CommandName[] = ["help", "about", "work", "skills", "standards", "contact", "clear"];
+const VALID_COMMANDS: CommandName[] = ["help", "about", "work", "skills", "standards", "oss", "contact", "clear"];
 
 export function useTerminal(): UseTerminalReturn {
   const [history, setHistory] = useState<CommandEntry[]>([]);

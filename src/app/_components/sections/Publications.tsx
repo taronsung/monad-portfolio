@@ -31,11 +31,14 @@ export function Publications() {
             transition={{ delay: index * 0.1 }}
             className="block p-4 border-l-2 border-monad-purple-dark hover:border-monad-purple hover:bg-terminal-bg-light transition-colors"
           >
-            <div className="flex items-baseline gap-2 mb-1">
+            <div className="flex items-baseline gap-2 mb-1 flex-wrap">
               <span className="text-monad-purple-light font-medium">
                 {pub.publisher}
               </span>
               <span className="skill-pill text-xs">{pub.language}</span>
+              {"count" in pub && pub.count && (
+                <span className="text-xs text-terminal-text-dim">({pub.count})</span>
+              )}
             </div>
             <p className="text-terminal-text">{pub.title}</p>
             <div className="mt-2 text-xs text-monad-purple">Read on Medium →</div>

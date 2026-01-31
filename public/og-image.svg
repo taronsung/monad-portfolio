@@ -1,0 +1,57 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
+    </style>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#836EF9;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#836EF9;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#836EF9;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  
+  <!-- Scanlines effect -->
+  <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+    <rect width="4" height="2" fill="rgba(255,255,255,0.02)"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#scanlines)"/>
+  
+  <!-- Terminal window frame -->
+  <rect x="50" y="40" width="1100" height="550" rx="12" fill="#141414" stroke="#836EF9" stroke-width="1" stroke-opacity="0.3"/>
+  
+  <!-- Window chrome -->
+  <circle cx="90" cy="70" r="8" fill="#ff5f56"/>
+  <circle cx="120" cy="70" r="8" fill="#ffbd2e"/>
+  <circle cx="150" cy="70" r="8" fill="#27ca3f"/>
+  
+  <!-- Title bar -->
+  <text x="600" y="75" font-family="JetBrains Mono, monospace" font-size="14" fill="#71717a" text-anchor="middle">taronsung@monad ~ %</text>
+  
+  <!-- Prompt line -->
+  <text x="100" y="180" font-family="JetBrains Mono, monospace" font-size="20" fill="#836EF9">visitor@monad</text>
+  <text x="280" y="180" font-family="JetBrains Mono, monospace" font-size="20" fill="#71717a">:~$</text>
+  <text x="330" y="180" font-family="JetBrains Mono, monospace" font-size="20" fill="#e4e4e7">cat about.md</text>
+  
+  <!-- Main name -->
+  <text x="600" y="290" font-family="JetBrains Mono, monospace" font-size="72" font-weight="700" fill="#e4e4e7" text-anchor="middle">TARON</text>
+  
+  <!-- Glow effect under name -->
+  <rect x="300" y="310" width="600" height="4" fill="url(#glow)" rx="2"/>
+  
+  <!-- Tagline -->
+  <text x="600" y="380" font-family="JetBrains Mono, monospace" font-size="24" fill="#836EF9" text-anchor="middle">Technical Writer | Blockchain Engineer | Korea Bridge</text>
+  
+  <!-- Description -->
+  <text x="600" y="440" font-family="JetBrains Mono, monospace" font-size="18" fill="#71717a" text-anchor="middle">Author of KIP-87 &amp; EIP-5865 | Monad Technical Writer</text>
+  
+  <!-- Contact info -->
+  <text x="600" y="520" font-family="JetBrains Mono, monospace" font-size="16" fill="#52525b" text-anchor="middle">github.com/taronsung | taronsung@gmail.com</text>
+  
+  <!-- Cursor -->
+  <rect x="1050" y="160" width="12" height="24" fill="#836EF9">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+</svg>

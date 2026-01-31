@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Seokrin Taron Sung | Technical Writer & Blockchain Engineer",
     description: "Technical writer who codes. Korea regulatory bridge.",
     type: "website",
-    images: ["/og-image.png"],
+    images: ["/api/og"],
   },
   twitter: {
     card: "summary_large_image",

@@ -66,13 +66,13 @@ export const publications = [
   {
     publisher: "A41 Ventures",
     title: "Replicated Security Series (Cosmos ICS)",
-    url: "https://medium.com/a41-ventures",
+    url: "https://medium.com/@taronsung",
     language: "Bilingual (EN/KR)",
   },
   {
     publisher: "Decipher (SNU Blockchain Society)",
     title: "ZK-STARK Explainers, Sui Deep-Dive",
-    url: "https://medium.com/decipher-media",
+    url: "https://medium.com/@taronsung",
     language: "Bilingual (EN/KR)",
   },
 ] as const;

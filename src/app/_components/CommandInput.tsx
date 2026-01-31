@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, KeyboardEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const COMMANDS = ["help", "about", "work", "skills", "standards", "contact", "clear"];
+const COMMANDS = ["help", "about", "work", "skills", "standards", "oss", "contact", "clear"];
 
 interface CommandInputProps {
   onSubmit: (command: string) => void;

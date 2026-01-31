@@ -33,23 +33,14 @@ export const experiences = [
     ],
   },
   {
-    company: "Hashed",
-    role: "Open Research Researcher",
+    company: "Hashed Open Research",
+    role: "Researcher",
     period: "2024-Present",
-    description: "Leading Korean Crypto VC",
+    description: "Leading Korean Crypto VC Research Initiative",
     highlights: [
       "Blockchain research and analysis",
       "Investment thesis development",
       "Policy research and regulatory analysis",
-    ],
-  },
-  {
-    company: "Hashed Open Research",
-    role: "Researcher",
-    period: "2024-Present",
-    description: "Blockchain Research Initiative",
-    highlights: [
-      "In-depth protocol research and analysis",
       "Public research publications",
     ],
     url: "https://hashedopenresearch-inc.notion.site/5aac5cee2d11484da9c20e3d2a370b1a?v=1744d20742c2427f925a6019a6d21ab0&pvs=74",
